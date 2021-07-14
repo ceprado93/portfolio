@@ -1,8 +1,9 @@
 $color-red: #f43a3a;
 $color-dark: #3b3931;
 
-nav {
+.show__nav {
   height: 4rem;
+  width: calc(100vw - 8rem);
   padding: 1rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -23,6 +24,43 @@ nav {
         margin-right: 5px;
       }
     }
+  }
+}
+
+.hide__nav {
+  animation: 5s fadeIn ease-in-out;
+  height: 4rem;
+  width: calc(100vw - 8rem);
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+  img {
+    height: 80%;
+  }
+  .nav__links {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    a {
+      text-decoration: none;
+      color: $color-dark;
+      font-size: 1rem;
+      span {
+        color: $color-red;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
   }
 }
 

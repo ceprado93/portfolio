@@ -5,7 +5,7 @@ const Routes = () => {
   return (
     <>
       <Switch>
-        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/portfolio" render={() => <Home />} />
       </Switch>
     </>
   );

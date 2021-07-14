@@ -8,7 +8,6 @@ import Footer from "./layout/Footer";
 function App() {
   return (
     <>
-      <Navigation />
       <main>
         <Routes />
       </main>

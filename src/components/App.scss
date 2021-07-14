@@ -26,6 +26,10 @@
 $color-red: #f43a3a;
 $color-dark: #3b3931;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
