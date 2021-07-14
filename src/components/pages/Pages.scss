@@ -1,0 +1,128 @@
+$color-red: #f43a3a;
+$color-dark: #3b3931;
+$color-grey: #a6a6a6;
+
+// FIRST SECTION
+
+.scroller {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.first__section {
+  height: calc(100vh - 140px);
+  padding-left: 15%;
+  padding-top: 5rem;
+  scroll-snap-align: center;
+
+  h1 {
+    color: $color-grey;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-family: helveticaMedium;
+  }
+  h2 {
+    font-size: clamp(40px, 8vw, 80px);
+    font-family: helveticaBold;
+    color: $color-red;
+    margin: 0;
+  }
+  h3 {
+    font-size: clamp(40px, 8vw, 80px);
+    font-family: helveticaBold;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 20px;
+    font-size: 20px;
+    max-width: 540px;
+    margin-bottom: 4rem;
+    span {
+      color: $color-red;
+    }
+  }
+  a {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border: 1px solid $color-red;
+    border-radius: 5px;
+    color: $color-red;
+  }
+}
+
+// ABOUT
+
+.about {
+  margin-bottom: 60px;
+  height: 100vh;
+  scroll-snap-align: center;
+  padding-left: 15%;
+  h2 {
+    padding-top: 5rem;
+    color: $color-dark;
+
+    span {
+      color: $color-red;
+    }
+  }
+  .about__info {
+    display: flex;
+    align-items: flex-start;
+    .text__wrapper {
+      width: 50%;
+      color: $color-dark;
+
+      span {
+        color: $color-red;
+      }
+    }
+    .img__wrapper {
+      margin-left: 4rem;
+      background-color: $color-red;
+      position: relative;
+      border-radius: 10px;
+      transition: background-color 0.3s ease-in-out;
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        filter: grayscale(0.6);
+        mix-blend-mode: multiply;
+
+        transition: filter 0.1s ease-in-out;
+        position: relative;
+        vertical-align: middle;
+      }
+      img:hover {
+        filter: grayscale(0);
+        background-color: transparent;
+      }
+      .red__shadow {
+        border: 3px solid $color-red;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        left: 20px;
+        z-index: -2;
+        border-radius: 10px;
+      }
+      .white__shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 10px;
+        background-color: white;
+      }
+    }
+    .img__wrapper:hover {
+      background-color: transparent;
+    }
+  }
+}
