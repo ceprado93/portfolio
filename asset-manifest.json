@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.986d9b6d.chunk.css",
+    "main.js": "/portfolio/static/js/main.3da36598.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.3da36598.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.bcd5af5a.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.bcd5af5a.js.map",
+    "static/js/2.b91e5a4a.chunk.js": "/portfolio/static/js/2.b91e5a4a.chunk.js",
+    "static/js/2.b91e5a4a.chunk.js.map": "/portfolio/static/js/2.b91e5a4a.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.986d9b6d.chunk.css.map": "/portfolio/static/css/main.986d9b6d.chunk.css.map",
+    "static/js/2.b91e5a4a.chunk.js.LICENSE.txt": "/portfolio/static/js/2.b91e5a4a.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/portfolio/static/media/HelveticaNeue-UltraLight-06.4f8220cf.ttf",
+    "static/media/Line.3348e364.svg": "/portfolio/static/media/Line.3348e364.svg",
+    "static/media/c.bbce3f70.png": "/portfolio/static/media/c.bbce3f70.png",
+    "static/media/codepen.8e147692.svg": "/portfolio/static/media/codepen.8e147692.svg",
+    "static/media/github.ba48702d.svg": "/portfolio/static/media/github.ba48702d.svg",
+    "static/media/linkedin.7e47fa38.svg": "/portfolio/static/media/linkedin.7e47fa38.svg",
+    "static/media/photo.a16dd28a.jpeg": "/portfolio/static/media/photo.a16dd28a.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcd5af5a.js",
+    "static/js/2.b91e5a4a.chunk.js",
+    "static/css/main.986d9b6d.chunk.css",
+    "static/js/main.3da36598.chunk.js"
+  ]
+}
