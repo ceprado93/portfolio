@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.57786ff6.chunk.css",
-    "main.js": "/portfolio/static/js/main.2d808794.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.2d808794.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.5e6bd661.chunk.css",
+    "main.js": "/portfolio/static/js/main.46f19b63.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.46f19b63.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.bcd5af5a.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.bcd5af5a.js.map",
     "static/js/2.d89cf80d.chunk.js": "/portfolio/static/js/2.d89cf80d.chunk.js",
     "static/js/2.d89cf80d.chunk.js.map": "/portfolio/static/js/2.d89cf80d.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.57786ff6.chunk.css.map": "/portfolio/static/css/main.57786ff6.chunk.css.map",
+    "static/css/main.5e6bd661.chunk.css.map": "/portfolio/static/css/main.5e6bd661.chunk.css.map",
     "static/js/2.d89cf80d.chunk.js.LICENSE.txt": "/portfolio/static/js/2.d89cf80d.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/portfolio/static/media/HelveticaNeue-UltraLight-06.4f8220cf.ttf",
     "static/media/Line.3348e364.svg": "/portfolio/static/media/Line.3348e364.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.bcd5af5a.js",
     "static/js/2.d89cf80d.chunk.js",
-    "static/css/main.57786ff6.chunk.css",
-    "static/js/main.2d808794.chunk.js"
+    "static/css/main.5e6bd661.chunk.css",
+    "static/js/main.46f19b63.chunk.js"
   ]
 }
