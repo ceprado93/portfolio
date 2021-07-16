@@ -18,6 +18,7 @@ const Home = () => {
   const [ready, setReady] = useState(false);
   const [leave, setLeave] = useState(false);
   const [size, setSize] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const [reveal, setReveal] = useState({
     right: "reveal fadeInRight ",
@@ -44,6 +45,10 @@ const Home = () => {
     }, 200);
   }, []);
 
+  const toggleMenu = () => {
+    showMenu ? setShowMenu(false) : setShowMenu(true);
+  };
+
   return (
     <>
       <div>
@@ -53,6 +58,7 @@ const Home = () => {
               <img src={Logo} alt="logo" />
               {size ? (
                 <img
+                  onClick={() => toggleMenu()}
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEX///8AAAD6+vrW1tZWVlYfHx/u7u5LS0vc3Nw7OztGRkZ2dnZSUlI3NzdAQEAYGBiYySgGAAAAvklEQVR4nO3bOQ7CUBBEQRaDd/v+tyX9AQGyNJ7BqrrBi1t9uwEAAAAAAAAAAAAAAAAAYYZnHUNI4XivYwwp7LOzGr1ChQrTKVSoMJ9Chd9N2VmNKaRwXroqljmkEAAAAAAA+BePSkIK1+zBqbGGFF5/P1R4JoUKFeZTqFBhPoXHbNlZjS2kEAAAAAAAoIpuf1WxdyGF11/XFJ5JoUKF+RQqVJhP4THXfyO8KwkpBAAAAAAAAAAAAAAAAICffADF1yNXbAz3AwAAAABJRU5ErkJggg=="
                   alt="navicon"
                 />
@@ -70,6 +76,25 @@ const Home = () => {
                   <a href="#contact">
                     <span>04.</span>Contact
                   </a>
+                </div>
+              )}
+              {showMenu && (
+                <div className="openmenu">
+                  <button onClick={() => toggleMenu()}>x</button>
+                  <ul>
+                    <a href="#top" onClick={() => toggleMenu()}>
+                      <span>01.</span>Home
+                    </a>
+                    <a href="#about" onClick={() => toggleMenu()}>
+                      <span>02.</span>About
+                    </a>
+                    <a href="#portfolio" onClick={() => toggleMenu()}>
+                      <span>03.</span>Portfolio
+                    </a>
+                    <a href="#contact" onClick={() => toggleMenu()}>
+                      <span>04.</span>Contact
+                    </a>
+                  </ul>
                 </div>
               )}
             </nav>
