@@ -35,3 +35,35 @@ body {
   padding: 0;
   font-family: helvetica;
 }
+
+.firstScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  img {
+    width: 10%;
+    animation: aparecer 1s ease 0.4s backwards;
+    transition: all 1s ease 0.1s;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: rotate(60deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .firstScreen {
+    img {
+      width: 40%;
+    }
+  }
+}

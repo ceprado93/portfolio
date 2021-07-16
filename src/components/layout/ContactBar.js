@@ -1,20 +1,21 @@
+import { useLocation } from "react-router-dom";
 import "./Layout.scss";
-import codepen from "../assets/codepen.svg";
-import github from "../assets/github.svg";
-import linkedin from "../assets/linkedin.svg";
 import line from "../assets/Line.svg";
 
 const ContactBar = () => {
+  let location = useLocation();
+
+  if (location.pathname.includes("/portfolio/project")) return null;
   return (
     <div className="contact__bar">
-      <a href="">
-        <img src={github} alt="github" />
+      <a href="https://github.com/ceprado93" rel="noreferrer" target="_blank">
+        <p className="github__logo"></p>
       </a>
-      <a href="">
-        <img src={linkedin} alt="github" />
+      <a href="https://www.linkedin.com/in/carlos-prado-buesa/" rel="noreferrer" target="_blank">
+        <p className="linkedin__logo"></p>
       </a>
-      <a href="">
-        <img src={codepen} alt="github" />
+      <a href="https://codepen.io/ceprado93" rel="noreferrer" target="_blank">
+        <p className="codepen__logo"></p>
       </a>
       <img src={line} alt="line" />
     </div>

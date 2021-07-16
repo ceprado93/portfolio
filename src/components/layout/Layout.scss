@@ -8,6 +8,10 @@ $color-dark: #3b3931;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .project__navlink {
+    height: 100%;
+    padding-top: 12px;
+  }
   img {
     height: 80%;
   }
@@ -74,16 +78,62 @@ $color-dark: #3b3931;
   flex-direction: column;
   justify-content: space-between;
   a {
-    img {
+    .github__logo {
       display: block;
       margin: 0 auto;
-      width: 60%;
+      background-image: url(../assets/github.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0.8rem;
       margin-bottom: 1rem;
-      transition: width 0.3s ease-in-out;
+      transition: background-image 0.2s ease-in-out;
+      transition: padding 0.2s ease-in-out;
     }
-    img:hover {
-      width: 70%;
-      color: $color-red;
+    .github__logo:hover {
+      background-image: url(../assets/githubrojo.svg);
+      padding: 0.9rem;
     }
+    .linkedin__logo {
+      display: block;
+      margin: 0 auto;
+      background-image: url(../assets/linkedin.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      transition: background-image 0.2s ease-in-out;
+      transition: padding 0.2s ease-in-out;
+    }
+    .linkedin__logo:hover {
+      background-image: url(../assets/linkedinrojo.svg);
+      padding: 0.9rem;
+    }
+    .codepen__logo {
+      display: block;
+      margin: 0 auto;
+      background-image: url(../assets/codepen.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      transition: background-image 0.2s ease-in-out;
+      transition: padding 0.2s ease-in-out;
+    }
+    .codepen__logo:hover {
+      background-image: url(../assets/codepenrojo.svg);
+      padding: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .show__nav {
+    padding: 1rem 2rem;
+  }
+  .contact__bar {
+    height: 20vh;
   }
 }
