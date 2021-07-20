@@ -203,9 +203,9 @@ const Home = () => {
                 </Link>
               </div>
               <div className="Inno__wrapper">
-                <Link to="/portfolio/project/innoaudio">
+                <Link to="/portfolio/project/nemeson">
                   <div>
-                    <img src={cpzfondo} alt="innoaudio" />
+                    <img src="https://nemeson.es/assets/renderHunt.png" alt="innoaudio" />
                   </div>
                 </Link>
               </div>
