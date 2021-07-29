@@ -1,7 +1,5 @@
 import { useState, useLayoutEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectOption } from "../redux/store";
 
 import "./Pages.scss";
 import Logo from "../assets/c.png";
