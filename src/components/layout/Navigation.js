@@ -17,7 +17,7 @@ const Navigation = () => {
     <>
       {showNav ? (
         <nav className="show__nav">
-          <img src={Logo} alt="logo" />
+          {/* <img src={Logo} alt="logo" /> */}
           <div className="nav__links">
             <a href="#about">
               <span>01.</span>About

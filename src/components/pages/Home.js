@@ -1,21 +1,28 @@
 import { useState, useLayoutEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import selectOption from "../redux/store";
 
 import "./Pages.scss";
-import Logo from "../assets/c.png";
-
-import photo from "../assets/photo.jpeg";
-import nemesonchip from "../assets/nemesonchip.png";
-import cpzfondo from "../assets/cpzfondo.png";
-import simulacion from "../assets/simulacion.png";
-import socialimage from "../assets/socialImage.png";
+import Modal from "../shared/Modal";
+import projectsFile from "../assets/projectsFile";
+import { ReactComponent as DragHandle } from "../assets/svg/dragHandle.svg";
+import { ReactComponent as Figma } from "../assets/svg/figma_logo.svg";
+import { ReactComponent as Github } from "../assets/svg/github.svg";
+import { ReactComponent as Codepen } from "../assets/svg/codepen.svg";
+import { ReactComponent as Linkedin } from "../assets/svg/linkedin.svg";
 
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const [ready, setReady] = useState(false);
-  const [leave, setLeave] = useState(false);
+  const [showModal, setShowModal] = useState("hide");
   const [size, setSize] = useState(false);
+  const [projects, setProjects] = useState(projectsFile);
+  const [selectedProject, setSelectedProject] = useState(undefined);
+  const [mode, setMode] = useState("claro");
+  const [modeTrigger, setModeTrigger] = useState("oscuro");
+
   const [showMenu, setShowMenu] = useState(false);
 
   const [reveal, setReveal] = useState({
@@ -28,11 +35,8 @@ const Home = () => {
   const toogleOption = useSelector(selectOption);
 
   useLayoutEffect(() => {
-    let element = document.querySelector("#portfolio");
-    var rect = element.getBoundingClientRect();
-    toogleOption && window.scrollTo(0, rect.top);
-
-    window.innerWidth < 600 && setSize(true);
+    console.log(window.screen.width);
+    window.screen.width < 600 && setSize(true);
 
     setTimeout(() => {
       setReveal({
@@ -47,231 +51,141 @@ const Home = () => {
     showMenu ? setShowMenu(false) : setShowMenu(true);
   };
 
+  const handleTheme = () => {
+    mode === "claro" ? setMode("oscuro") : setMode("claro");
+    modeTrigger === "claro" ? setModeTrigger("oscuro") : setModeTrigger("claro");
+  };
+
+  const handleModal = (e, elm) => {
+    e.preventDefault();
+    console.log(elm);
+    selectedProject != undefined ? setSelectedProject(undefined) : setSelectedProject(elm);
+    showModal === "hide" ? setShowModal("show") : setShowModal("hide");
+  };
+
   return (
     <>
-      <div>
+      <div className={mode + "_theme"}>
         <div className="scroller">
-          <section className="first__section">
+          <section id="hero" className="first__section">
             <nav id="top" className="show__nav">
-              <img src={Logo} alt="logo" />
+              {/* <img src={Logo} alt="logo" /> */}
+              <p className="letter_logo">C P</p>
               {size ? (
-                <img
-                  onClick={() => toggleMenu()}
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEX///8AAAD6+vrW1tZWVlYfHx/u7u5LS0vc3Nw7OztGRkZ2dnZSUlI3NzdAQEAYGBiYySgGAAAAvklEQVR4nO3bOQ7CUBBEQRaDd/v+tyX9AQGyNJ7BqrrBi1t9uwEAAAAAAAAAAAAAAAAAYYZnHUNI4XivYwwp7LOzGr1ChQrTKVSoMJ9Chd9N2VmNKaRwXroqljmkEAAAAAAA+BePSkIK1+zBqbGGFF5/P1R4JoUKFeZTqFBhPoXHbNlZjS2kEAAAAAAAoIpuf1WxdyGF11/XFJ5JoUKF+RQqVJhP4THXfyO8KwkpBAAAAAAAAAAAAAAAAICffADF1yNXbAz3AwAAAABJRU5ErkJggg=="
-                  alt="navicon"
-                />
+                <DragHandle onClick={() => toggleMenu()} />
               ) : (
                 <div className="nav__links">
-                  <a href="#top">
-                    <span>01.</span>Home
-                  </a>
-                  <a href="#about">
-                    <span>02.</span>About
-                  </a>
-                  <a href="#portfolio">
-                    <span>03.</span>Portfolio
-                  </a>
-                  <a href="#contact">
-                    <span>04.</span>Contact
-                  </a>
+                  {/* <a href="#about">About</a> */}
+                  <a href="#portfolio">Portafolio</a>
+                  <a href="#contact">Contacto</a>
                 </div>
               )}
               {showMenu && (
                 <div className="openmenu">
                   <button onClick={() => toggleMenu()}>x</button>
                   <ul>
-                    <a href="#top" onClick={() => toggleMenu()}>
-                      <span>01.</span>Home
-                    </a>
-                    <a href="#about" onClick={() => toggleMenu()}>
-                      <span>02.</span>About
-                    </a>
                     <a href="#portfolio" onClick={() => toggleMenu()}>
-                      <span>03.</span>Portfolio
+                      Portafolio
                     </a>
                     <a href="#contact" onClick={() => toggleMenu()}>
-                      <span>04.</span>Contact
+                      Contacto
                     </a>
                   </ul>
                 </div>
               )}
             </nav>
             <div className={reveal.down}>
-              <h1>Hi, my name is</h1>
-              <h2>Carlos Prado.</h2>
-              <h3>I bring ideas to life.</h3>
-              <p>
-                I am a profesional Full stack developer based in Madrid, Spain. I create custom websites, always looking for the right balance between functionality and <span>visual impact.</span>
-              </p>
-              <a href="#about">About me</a>
+              <p className="pretitle">Hola, mi nombre es</p>
+              <h1>Carlos Prado</h1>
+              <h3>Doy vida a las ideas.</h3>
+              {size ? (
+                <p className="hero_desc">
+                  Soy un desarrollador<br></br> con sede en Bilbao.<br></br>Me encanta el diseño<br></br> minimalista y brutalista. <br></br>busco el equilibrio<br></br> entre funcionalidad e{" "}
+                  <br></br>
+                  <span>impacto visual</span>.
+                </p>
+              ) : (
+                <p className="hero_desc">
+                  Soy un desarrollador con sede en Bilbao. <br></br>Me encanta el diseño minimalista y brutalista. <br></br>busco el equilibrio entre funcionalidad e <br></br>
+                  <span>impacto visual</span>.
+                </p>
+              )}
             </div>
           </section>
-          <section id="about" className="about">
-            <h2 className="">
-              <span>02.</span>About Me.
-            </h2>
-
-            <div className="about__info">
-              <div className="text__wrapper">
-                <p className="responsive-second-p">
-                  My name is <span>Carlos Prado.</span> Born and raised in Getxo, Spain. As a kid, I always loved to disassemble and then reconstruct everything I came across, and find the logic
-                  behind, that's why, when I turned 18, I decided to study
-                  <span> Engineering.</span>
-                </p>
-                <p className="responsive-second-p hide__phone">
-                  After graduating from Uni, I spent my first professional years working between <span> Europe </span>
-                  and <span> South America</span> in various industries and roles. In 2019, I decided to step out of my comfort zone, pack my bags and move to the other end of the world,{" "}
-                  <span>Australia</span>, where I lived for 1 year and a half.
-                </p>
-                <p className="responsive-second-p">Now, I am a front-end developer with full stack knowledge, always looking for the right balance between functionality and visual impact.</p>
-                <p className="responsive-second-p">Some technologies I've been working with recently are:</p>
-                <div className="skills__list">
-                  <ul>
-                    <li>
-                      <span>{"> "}</span>Javascript (ES6+)
-                    </li>
-                    <li>
-                      <span>{"> "}</span>Sass
-                    </li>
-                    <li>
-                      <span>{"> "}</span>Liquid
-                    </li>
-                    <li>
-                      <span>{"> "}</span>React Native
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <span>{"> "}</span>React
-                    </li>
-                    <li>
-                      <span>{"> "}</span>Redux
-                    </li>
-                    <li>
-                      <span>{"> "}</span>Ajax / Axios
-                    </li>
-                    <li>
-                      <span>{"> "}</span>PHP
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <span>{"> "}</span>MongoDB
-                    </li>
-                    <li>
-                      <span>{"> "}</span>NodeJs
-                    </li>
-                    <li>
-                      <span>{"> "}</span>ExpressJs
-                    </li>
-                    <li>
-                      <span>{"> "}</span>MySQL
-                    </li>
-                  </ul>
+          {projects.map((item, idx) => {
+            return (
+              <section key={idx} id={"portfolio" + idx} className="portfolio__section">
+                <div className="portfolio__wrapper">
+                  {idx === 0 ? (
+                    <div className="portfolio_header">
+                      <p>Portafolio</p>
+                      <div className="break_line"></div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                  {item.map((elm, idx) => {
+                    return (
+                      <div key={elm.id} className={elm.size + " " + elm.row + " " + elm.column + " proyect__wrapper"}>
+                        <a onClick={(e) => handleModal(e, elm)}>
+                          <div>
+                            <img src={elm.img} alt={elm.title} />
+                          </div>
+                        </a>
+                      </div>
+                    );
+                  })}
                 </div>
+              </section>
+            );
+          })}
+          <section id="contact" className="bottom__section">
+            <section className="contact__section">
+              <div className="contact_header">
+                <div className="contact_title">
+                  <h2>CONTACTO</h2>
+                  <div className="break_line"></div>
+                </div>
+                <p>Si tienes algúna duda escupe aquí abajo.</p>
               </div>
-              <div className="img__wrapper">
-                <img className="" src={photo} alt="Carlos Prado" />
-                <div className="white__shadow"></div>
-                <div className="red__shadow"></div>
-              </div>
-            </div>
-          </section>
-          <section id="portfolio" className="portfolio__section">
-            <div className="portfolio__wrapper">
-              <div className="aps__wrapper">
-                <Link to="/portfolio/project/aps">
-                  <div>
-                    <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/01/26/15484986822524.jpg" alt="aps" />
-                  </div>
-                </Link>
-              </div>
-              <div className="nemOne__wrapper">
-                <Link to="/portfolio/project/nemesonOne">
-                  <div>
-                    <img src={nemesonchip} alt="nemeson" />
-                  </div>
-                </Link>
-              </div>
-              <div className="nemHunt__wrapper">
-                <Link to="/portfolio/project/nemesonHunt">
-                  <div>
-                    <img src={simulacion} alt="nemeson" />
-                  </div>
-                </Link>
-              </div>
-              <div className="Inno__wrapper">
-                <Link to="/portfolio/project/nemeson">
-                  <div>
-                    <img src="https://nemeson.es/assets/renderHunt.png" alt="innoaudio" />
-                  </div>
-                </Link>
-              </div>
-              <div className="Oir__wrapper">
-                <Link to="/portfolio/project/oirdiez">
-                  <div>
-                    <img src="https://nemesonone.es/assets/Renderagua.png" alt="oir10" />
-                  </div>
-                </Link>
-              </div>
-              <div className="WM__wrapper">
-                <Link to="/portfolio/project/wavemaps">
-                  <div>
-                    <img src="https://cdn1.theinertia.com/wp-content/gallery/dylan-brayshaw/5-the-playground.jpg" alt="wm" />
-                  </div>
-                </Link>
-              </div>
-              <div className="cpa__wrapper">
-                <Link to="/portfolio/project/cpart">
-                  <div>
-                    <img src={cpzfondo} alt="cpart" />
-                  </div>
-                </Link>
-              </div>
-              <div className="procor__wrapper">
-                <Link to="/portfolio/project/procorlab">
-                  <div>
-                    <img src={socialimage} alt="procorlab" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </section>
-          <section id="contact" class="bottom__section">
-            <section class="contact__section">
-              <h2>
-                <span>04.</span>Contact.
-              </h2>
-              <p>Cuéntanos tus dudas y te las resolveremos</p>
               <div className="form__wrapper">
                 <form action="#" method="post">
                   <input className="short__input" type="text" placeholder="Nombre" required />
                   <input className="short__input" type="text" placeholder="Apellido" required />
                   <input className="long__input" type="email" placeholder="Correo" required />
-                  <input className="long__input" type="text" placeholder="Teléfono" required />
-                  <input className="long__input" type="text" placeholder="Movil" required />
                   <textarea rows="7" type="text" placeholder="Consulta" required></textarea>
                   <button type="submit">Enviar</button>
                 </form>
               </div>
             </section>
             <section className="main__footer">
-              <a href="#about">
-                <span>01.</span>Home
-              </a>
-              <a href="#Skills">
-                <span>02.</span>About
-              </a>
-              <a href="#portfolio">
-                <span>03.</span>Portfolio
-              </a>
-              <a href="#contact">
-                <span>04.</span>Contact
-              </a>
+              <div className="nav_footer">
+                <a href="#hero">Arriba</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="#contact">Contacto</a>
+                <button className={modeTrigger + "_button"} onClick={() => handleTheme()}>
+                  Modo {modeTrigger}
+                </button>
+              </div>
+              <div className="contact__bar">
+                <a href="https://github.com/ceprado93" rel="noreferrer" target="_blank">
+                  <Github className="contact_logo github__logo" />
+                </a>
+                <a href="https://www.linkedin.com/in/carlos-prado-buesa/" rel="noreferrer" target="_blank">
+                  <Linkedin className="contact_logo linkedin__logo" />
+                </a>
+                <a href="https://codepen.io/ceprado93" rel="noreferrer" target="_blank">
+                  <Codepen className="contact_logo codepen__logo" />
+                </a>
+                <a href="https://www.figma.com/file/caM90NjeCFugSt3CWMo8PK/Portfolio?node-id=68%3A14&t=iZURKDhIZ94l1NyQ-1" rel="noreferrer" target="_blank">
+                  <Figma className="contact_logo figma__logo" />
+                </a>
+              </div>
             </section>
           </section>
         </div>
       </div>
+      <Modal showModal={showModal} project={selectedProject} closeMe={handleModal}></Modal>
     </>
   );
 };

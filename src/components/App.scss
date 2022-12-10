@@ -4,23 +4,27 @@
 }
 
 @font-face {
-  font-family: helveticaBold;
-  src: url(./assets/fonts/HelveticaNeueTTF/HelveticaNeue-Bold-02.ttf);
+  font-family: neueMontrealBold;
+  src: url(./assets/fonts/neueMontreal/PPNeueMontreal-Bold.otf);
 }
 
 @font-face {
-  font-family: helveticaMedium;
-  src: url(./assets/fonts/HelveticaNeueTTF/HelveticaNeue-Medium-11.ttf);
+  font-family: neueMontrealMedium;
+  src: url(./assets/fonts/neueMontreal/PPNeueMontreal-Medium.otf);
+}
+@font-face {
+  font-family: neueMontrealBook;
+  src: url(./assets/fonts/neueMontreal/PPNeueMontreal-Book.otf);
 }
 
 @font-face {
-  font-family: helveticaLight;
-  src: url(./assets/fonts/HelveticaNeueTTF/HelveticaNeue-Light-08.ttf);
+  font-family: neueMontrealThin;
+  src: url(./assets/fonts/neueMontreal/PPNeueMontreal-Thin.otf);
 }
 
 @font-face {
-  font-family: helveticaUltraLight;
-  src: url(./assets/fonts/HelveticaNeueTTF/HelveticaNeue-UltraLight-06.ttf);
+  font-family: neueMontreal;
+  src: url(./assets/fonts/neueMontreal/PPNeueMontreal-Book.otf);
 }
 
 $color-red: #f43a3a;
@@ -33,7 +37,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: helvetica;
+  font-family: neueMontreal;
+  scroll-behavior: smooth;
 }
 
 .firstScreen {
@@ -42,17 +47,49 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  img {
-    width: 10%;
-    animation: aparecer 1s ease 0.4s backwards;
-    transition: all 1s ease 0.1s;
+  .loading_logo {
+    font-size:150px;
+    // color: #f43a3a;
+    font-family: neueMontrealBook;
+    text-align: center;
+    // animation: aparecer 0.5s ease 0.4s ;
+    // transform: translate3d(360);
+    transition: transform 1.2s ease, font-size 1.2s ease;
+    &.wave{
+        background-image: url(./assets/backgroundRed.png);
+        -webkit-background-clip: text;
+          color: transparent;
+          text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
+          animation: loading-animation 1.2s linear alternate;
+          background-size: 200px 100px;
+          background-repeat: repeat-x;
+          opacity: 1;
+    }
+    &.move{
+      transform: translate(-39vw, -44vh);
+      font-size: 32px;
+    }
   }
 }
 
+@keyframes loading-animation {
+  0% {
+    background-size: 200px 0px
+  }
+
+  ;
+
+  100% {
+    background-size: 200px 200px
+  }
+
+  ;
+}
+
 @keyframes aparecer {
-  from {
+  from{
     opacity: 0;
-    transform: rotate(60deg);
+    // transform: rotate(360deg);
   }
   to {
     opacity: 1;

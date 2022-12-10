@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "./Layout.scss";
-import line from "../assets/Line.svg";
+import line from "../assets/svg/Line.svg";
 
 const ContactBar = () => {
   let location = useLocation();

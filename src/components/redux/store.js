@@ -3,4 +3,5 @@ import { toggleReducer } from "./reducer";
 
 export const store = createStore(toggleReducer, false);
 
-export const selectOption = (state) => state;
+const selectOption = (state) => state;
+export default selectOption;

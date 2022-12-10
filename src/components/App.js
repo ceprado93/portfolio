@@ -11,10 +11,14 @@ import Logo from "./assets/c.png";
 
 function App() {
   const [start, setStart] = useState(false);
+  const [logoClass, setLogoClass] = useState("loading_logo wave");
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+    setTimeout(() => {
+      setLogoClass("loading_logo move wave");
+    }, 1000);
     setTimeout(() => {
       setStart(true);
     }, 2000);
@@ -23,6 +27,9 @@ function App() {
     setTimeout(() => {
       dispatch({ type: "show" });
     }, 5000);
+    return () => {
+      window.removeEventListener("mousemove", () => {});
+    };
   }, []);
 
   function sendAction() {
@@ -35,11 +42,14 @@ function App() {
           <main>
             <Routes />
           </main>
-          <ContactBar />
+          {/* <ContactBar /> */}
         </>
       ) : (
         <div className="firstScreen">
-          <img src={Logo} alt="logo" />
+          <p className={logoClass} data-text="C P">
+            C P
+          </p>
+          {/* <img src={Logo} alt="logo" /> */}
         </div>
       )}
     </>
