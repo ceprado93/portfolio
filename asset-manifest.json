@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d9e6dc97.chunk.css",
-    "main.js": "/portfolio/static/js/main.e360c6d7.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.e360c6d7.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.44beecff.chunk.css",
+    "main.js": "/portfolio/static/js/main.908db0cb.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.908db0cb.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.bcd5af5a.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.bcd5af5a.js.map",
     "static/js/2.094afbc7.chunk.js": "/portfolio/static/js/2.094afbc7.chunk.js",
     "static/js/2.094afbc7.chunk.js.map": "/portfolio/static/js/2.094afbc7.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.d9e6dc97.chunk.css.map": "/portfolio/static/css/main.d9e6dc97.chunk.css.map",
+    "static/css/main.44beecff.chunk.css.map": "/portfolio/static/css/main.44beecff.chunk.css.map",
     "static/js/2.094afbc7.chunk.js.LICENSE.txt": "/portfolio/static/js/2.094afbc7.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/portfolio/static/media/PPNeueMontreal-Thin.79ab813e.otf",
     "static/media/close.325c43f5.svg": "/portfolio/static/media/close.325c43f5.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.bcd5af5a.js",
     "static/js/2.094afbc7.chunk.js",
-    "static/css/main.d9e6dc97.chunk.css",
-    "static/js/main.e360c6d7.chunk.js"
+    "static/css/main.44beecff.chunk.css",
+    "static/js/main.908db0cb.chunk.js"
   ]
 }
