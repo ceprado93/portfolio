@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.559bd849.chunk.css",
+    "main.css": "/portfolio/static/css/main.75af4db9.chunk.css",
     "main.js": "/portfolio/static/js/main.d170307d.chunk.js",
     "main.js.map": "/portfolio/static/js/main.d170307d.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.bf8fbad8.js",
@@ -12,7 +12,7 @@
     "static/js/4.e4d6fb40.chunk.js": "/portfolio/static/js/4.e4d6fb40.chunk.js",
     "static/js/4.e4d6fb40.chunk.js.map": "/portfolio/static/js/4.e4d6fb40.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.559bd849.chunk.css.map": "/portfolio/static/css/main.559bd849.chunk.css.map",
+    "static/css/main.75af4db9.chunk.css.map": "/portfolio/static/css/main.75af4db9.chunk.css.map",
     "static/js/2.21d99542.chunk.js.LICENSE.txt": "/portfolio/static/js/2.21d99542.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/portfolio/static/media/PPNeueMontreal-Thin.79ab813e.otf",
     "static/media/close.325c43f5.svg": "/portfolio/static/media/close.325c43f5.svg",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.bf8fbad8.js",
     "static/js/2.21d99542.chunk.js",
-    "static/css/main.559bd849.chunk.css",
+    "static/css/main.75af4db9.chunk.css",
     "static/js/main.d170307d.chunk.js"
   ]
 }
