@@ -4,18 +4,37 @@ import axios from "../assets/axios.png";
 import react from "../assets/react.png";
 import nodejs from "../assets/nodejs.png";
 import mongodb from "../assets/mongodb.png";
+import css from "../assets/css.png";
+import ionic from "../assets/ionic.png";
+import js from "../assets/js.png";
+import mysql from "../assets/mysql.png";
+import php from "../assets/php.png";
+import redux from "../assets/react.png";
+import sass from "../assets/sass.png";
+import shopify from "../assets/shopify.png";
+import vue from "../assets/vue.png";
+import zorraquino from "../assets/zorraquino.png";
 import { ReactComponent as Close } from "../assets/svg/close.svg";
 
 const Modal = ({ showModal, project, closeMe }) => {
   const [containerClass, setContainerClass] = useState("initial");
+  const [imageSources, setImageSources] = useState([]);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    console.log("holsaaa");
     containerClass === "" ? setContainerClass("initial") : setContainerClass("");
+    const loadImages = async () => {
+      if (project) {
+        const promises = project?.tecnologies.map((image) => import(`../assets/${image}.png`));
+        const sources = await Promise.all(promises);
+        setImageSources(sources);
+      }
+    };
+    loadImages();
   }, [showModal]);
 
   const handleClick = (e) => {
-    console.log(e.target);
     if (e.target.classList.contains("modal__wrp")) closeMe(e);
   };
   return (
@@ -29,14 +48,15 @@ const Modal = ({ showModal, project, closeMe }) => {
           <h5 className="project__subtitle">{project?.subtitle}</h5>
           <p className="project__description">{project?.description}</p>
           <div className="project__tecnologies">
-            <img className="stack" src={react} alt="react" />
-            <img className="stack" src={axios} alt="Axios" />
-            <img className="stack" src={nodejs} alt="node js" />
-            <img className="stack" src={mongodb} alt="mongo db" />
+            {imageSources?.map((elm, idx) => (
+              <img key={idx} className="stack" src={elm.default} alt={elm} />
+            ))}
           </div>
         </div>
         <div className="project__img">
-          <img src={project?.img} alt={project?.title} />
+          <a href={project?.url} target="_blank" className={project?.url ? "" : "link--disabled"}>
+            <img src={project?.img} alt={project?.title} />
+          </a>
         </div>
       </div>
     </div>

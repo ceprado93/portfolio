@@ -1,7 +1,6 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
-import selectOption from "../redux/store";
+import LocomotiveScroll from "locomotive-scroll";
 
 import "./Pages.scss";
 import Modal from "../shared/Modal";
@@ -17,11 +16,43 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [ready, setReady] = useState(false);
   const [showModal, setShowModal] = useState("hide");
+  const [start, setStart] = useState(false);
+  const [logoClass, setLogoClass] = useState("letter_logo move wave");
   const [size, setSize] = useState(false);
+  const [ticker, setTicker] = useState(false);
   const [projects, setProjects] = useState(projectsFile);
   const [selectedProject, setSelectedProject] = useState(undefined);
   const [mode, setMode] = useState("claro");
   const [modeTrigger, setModeTrigger] = useState("oscuro");
+  const [techs, setTechs] = useState([
+    "REACT",
+    "VUE",
+    "IONIC",
+    "SASS",
+    "CSS",
+    "JS",
+    "PHP",
+    "NODE",
+    "MYSQL",
+    "REACT",
+    "VUE",
+    "IONIC",
+    "SASS",
+    "CSS",
+    "JS",
+    "PHP",
+    "NODE",
+    "MYSQL",
+    "REACT",
+    "VUE",
+    "IONIC",
+    "SASS",
+    "CSS",
+    "JS",
+    "PHP",
+    "NODE",
+    "MYSQL",
+  ]);
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -32,22 +63,36 @@ const Home = () => {
   });
   let history = useHistory();
 
-  const toogleOption = useSelector(selectOption);
-
   useLayoutEffect(() => {
-    console.log(window.screen.width);
     window.screen.width < 600 && setSize(true);
-
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      setReveal({
-        right: "reveal fadeInRight visible ",
-        left: "reveal fadeInLeft visible",
-        down: "reveal fadeInDown visible firstSection__textwrapper",
-      });
-    }, 200);
+      setLogoClass("letter_logo wave");
+    }, 1500);
+    setTimeout(() => {
+      setReady(true);
+      setStart(true);
+    }, 3000);
   }, []);
+  useEffect(() => {
+    if (ready) {
+      setTimeout(() => {
+        setReveal({
+          right: "reveal fadeInRight visible ",
+          left: "reveal fadeInLeft visible",
+          down: "reveal fadeInDown visible firstSection__textwrapper",
+        });
+      }, 200);
+      setTimeout(() => {
+        setTicker(true);
+      }, 6000);
+    }
+  }, [start]);
 
   const toggleMenu = () => {
+    const icnMenu = document.querySelector(".menu-icon");
+    icnMenu.classList.toggle("active");
+
     showMenu ? setShowMenu(false) : setShowMenu(true);
   };
 
@@ -58,7 +103,6 @@ const Home = () => {
 
   const handleModal = (e, elm) => {
     e.preventDefault();
-    console.log(elm);
     selectedProject != undefined ? setSelectedProject(undefined) : setSelectedProject(elm);
     showModal === "hide" ? setShowModal("show") : setShowModal("hide");
   };
@@ -67,30 +111,57 @@ const Home = () => {
     <>
       <div className={mode + "_theme"}>
         <div className="scroller">
-          <section id="hero" className="first__section">
+          <header id="hero" className="first__section">
             <nav id="top" className="show__nav">
-              {/* <img src={Logo} alt="logo" /> */}
-              <p className="letter_logo">C P</p>
-              {size ? (
-                <DragHandle onClick={() => toggleMenu()} />
-              ) : (
-                <div className="nav__links">
-                  {/* <a href="#about">About</a> */}
-                  <a href="#portfolio">Portafolio</a>
-                  <a href="#contact">Contacto</a>
-                </div>
-              )}
               {showMenu && (
                 <div className="openmenu">
-                  <button onClick={() => toggleMenu()}>x</button>
                   <ul>
-                    <a href="#portfolio" onClick={() => toggleMenu()}>
+                    <a href="#hero" onClick={() => toggleMenu()}>
+                      sobre mi
+                    </a>
+                    <a href="#portfolio0" onClick={() => toggleMenu()}>
                       Portafolio
                     </a>
                     <a href="#contact" onClick={() => toggleMenu()}>
                       Contacto
                     </a>
                   </ul>
+                  <div className="menu_footer">
+                    <div className="menu_footer_wrp">
+                      <p>Social</p>
+                      <div className="menu_contact__bar">
+                        <a href="https://github.com/ceprado93" rel="noreferrer" target="_blank">
+                          Github
+                        </a>
+                        &nbsp;—&nbsp;
+                        <a href="https://www.linkedin.com/in/carlos-prado-buesa/" rel="noreferrer" target="_blank">
+                          Linkedin
+                        </a>
+                        &nbsp;—&nbsp;
+                        <a href="https://www.figma.com/file/caM90NjeCFugSt3CWMo8PK/Portfolio?node-id=68%3A14&t=iZURKDhIZ94l1NyQ-1" rel="noreferrer" target="_blank">
+                          Figma
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* <img src={Logo} alt="logo" /> */}
+              <p className={logoClass}>C P</p>
+              {size ? (
+                <div className={start ? "menu-icon" : "hide"} onClick={() => toggleMenu()}>
+                  <input className="menu-icon__cheeckbox" type="checkbox" />
+                  <div>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              ) : (
+                // <DragHandle onClick={() => toggleMenu()} />
+                <div className={start ? "nav__links" : "hide"}>
+                  {/* <a href="#about">About</a> */}
+                  <a href="#portfolio0">Portafolio</a>
+                  <a href="#contact">Contacto</a>
                 </div>
               )}
             </nav>
@@ -98,6 +169,7 @@ const Home = () => {
               <p className="pretitle">Hola, mi nombre es</p>
               <h1>Carlos Prado</h1>
               <h3>Doy vida a las ideas.</h3>
+
               {size ? (
                 <p className="hero_desc">
                   Soy un desarrollador<br></br> con sede en Bilbao.<br></br>Me encanta el diseño<br></br> minimalista y brutalista. <br></br>busco el equilibrio<br></br> entre funcionalidad e{" "}
@@ -111,14 +183,22 @@ const Home = () => {
                 </p>
               )}
             </div>
-          </section>
+            <div className={start ? "ticker" : "hide"}>
+              <div className={ticker ? "ticker-title loaded" : "ticker-title"}>
+                {techs.map((elm) => (
+                  <span>{elm}</span>
+                ))}
+              </div>
+            </div>
+          </header>
+
           {projects.map((item, idx) => {
             return (
               <section key={idx} id={"portfolio" + idx} className="portfolio__section">
                 <div className="portfolio__wrapper">
                   {idx === 0 ? (
                     <div className="portfolio_header">
-                      <p>Portafolio</p>
+                      <h2>Portafolio</h2>
                       <div className="break_line"></div>
                     </div>
                   ) : (
@@ -158,7 +238,7 @@ const Home = () => {
                 </form>
               </div>
             </section>
-            <section className="main__footer">
+            <footer className="main__footer">
               <div className="nav_footer">
                 <a href="#hero">Arriba</a>
                 <a href="#portfolio">Portafolio</a>
@@ -181,7 +261,7 @@ const Home = () => {
                   <Figma className="contact_logo figma__logo" />
                 </a>
               </div>
-            </section>
+            </footer>
           </section>
         </div>
       </div>
