@@ -30,6 +30,15 @@ $dark-theme: #040404;
         }
       }
     }
+    .ticker {
+      color: $white;
+    }
+    .ticker-title {
+      color: $white;
+    }
+    .ticker-title span {
+      border-top: 2px solid $white;
+    }
   }
   .portfolio__section { 
     background: $dark-theme;
@@ -295,7 +304,7 @@ $dark-theme: #040404;
       margin: 0;
       text-transform: uppercase;
     }
-    h3 {
+    h2 {
       font-size: clamp(40px, 8vw, 80px);
       font-family: neueMontrealMedium;
       margin-top: 10px;
@@ -403,7 +412,7 @@ $dark-theme: #040404;
   scroll-snap-align: center;
   background: #f4f4f4;
   padding-left: 10%;
-  h2 {
+  h3 {
     padding-top: 10rem;
     color: $color-dark;
 
@@ -509,7 +518,7 @@ $dark-theme: #040404;
       width: calc(20% - 25px);
       display: flex;
       align-items: center;
-      h2{
+      h3{
         margin: 0;
         margin-right: 16px;
         font-size: 24px;
@@ -747,7 +756,7 @@ $dark-theme: #040404;
       .contact_title{
         display: flex;
         align-items: center;
-        h2 {
+        h3 {
           font-size: 24px;
           line-height: 32px;
           font-weight: 400;
@@ -1220,7 +1229,7 @@ $dark-theme: #040404;
       .contact_header {
           margin-right: 0;
           .contact_title{
-            h2{
+            h3{
               margin-bottom: 0;
             }
           } 

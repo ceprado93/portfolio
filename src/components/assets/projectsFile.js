@@ -32,7 +32,7 @@ export default [
       description:
         "La página web de la empresa Nemeson ofrece información detallada sobre su línea de productos de audífonos, utilizando tecnologías avanzadas como React, Redux y Sass para crear una experiencia interactiva, visualmente atractiva y fácil de usar.",
       tecnologies: ["react", "redux", "sass"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670256894/portfolio/nemesonone_pepufr.png",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446898/portfolio/nemesonone-min_smhebo.png",
       size: "small",
       row: "row2",
       column: "column3",
@@ -60,7 +60,7 @@ export default [
       description:
         "La tienda en línea Oir10, especializada en prótesis auditivas, utiliza tecnologías modernas como React, Redux, Sass y PHP para proporcionar una experiencia de usuario personalizada y completa. Ofrece una amplia variedad de productos y servicios, con un diseño atractivo y fácil de usar.",
       tecnologies: ["react", "axios", "shopify"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670256912/portfolio/EdificioInnoaudioFondo_rwfz1g.jpg",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446394/portfolio/EdificioInnoaudioFondo-min_pevppb.jpg",
       size: "small",
       row: "row2",
       column: "column4",
@@ -123,7 +123,7 @@ export default [
       description:
         "La página web de clientes del banco Cajasur está creada con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes una amplia gama de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas y seguros. Es una herramienta esencial para la gestión financiera en línea.",
       tecnologies: ["php", "js", "css", "zorraquino"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257874/portfolio/oficinas-cajasur-cordoba-ROKDxPYWYpEFVyViHU24GyH-1240x768_abc_pvu8lp.jpg",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446898/portfolio/oficinas-cajasur-cordoba-ROKDxPYWYpEFVyViHU24GyH-1240x768_abc-min_uavnpw.jpg",
       size: "small",
       row: "row1",
       column: "column1",
@@ -136,7 +136,7 @@ export default [
       description:
         "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
       tecnologies: ["php", "js", "sass", "zorraquino"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670258027/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.18.21_pdm3nl.png",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446395/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.18.21-min_ysrirk.png",
       size: "small",
       row: "row2",
       column: "column1",
@@ -202,7 +202,7 @@ export default [
       description:
         "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
       tecnologies: ["php", "js", "sass", "zorraquino"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257884/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.19.59_btidkx.png",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446394/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.19.59-min_fthgby.png",
       size: "small",
       row: "row3",
       column: "column3",
@@ -215,7 +215,7 @@ export default [
       description:
         "Whitehole Golf es la página web de eventos de golf organizados por el fondo de inversión Whitehole del Grupo Velatia. La página, hecha con PHP, JS, SASS y el CMS de la agencia Zorraquino, ofrece información sobre los próximos eventos y permite la inscripción de los participantes.",
       tecnologies: ["php", "js", "sass", "zorraquino"],
-      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670608380/portfolio/Captura_de_pantalla_2022-12-09_a_las_18.52.31_iroktr.png",
+      img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1680446395/portfolio/Captura_de_pantalla_2022-12-09_a_las_18.52.31-min_snyqnf.png",
       size: "small",
       row: "row4",
       column: "column3",

@@ -168,7 +168,7 @@ const Home = () => {
             <div className={reveal.down}>
               <p className="pretitle">Hola, mi nombre es</p>
               <h1>Carlos Prado</h1>
-              <h3>Doy vida a las ideas.</h3>
+              <h2>Doy vida a las ideas.</h2>
 
               {size ? (
                 <p className="hero_desc">
@@ -198,7 +198,7 @@ const Home = () => {
                 <div className="portfolio__wrapper">
                   {idx === 0 ? (
                     <div className="portfolio_header">
-                      <h2>Portafolio</h2>
+                      <h3>Portafolio</h3>
                       <div className="break_line"></div>
                     </div>
                   ) : (
@@ -223,17 +223,17 @@ const Home = () => {
             <section className="contact__section">
               <div className="contact_header">
                 <div className="contact_title">
-                  <h2>CONTACTO</h2>
+                  <h3>CONTACTO</h3>
                   <div className="break_line"></div>
                 </div>
                 <p>Si tienes algúna duda escupe aquí abajo.</p>
               </div>
               <div className="form__wrapper">
                 <form action="#" method="post">
-                  <input className="short__input" type="text" placeholder="Nombre" required />
-                  <input className="short__input" type="text" placeholder="Apellido" required />
-                  <input className="long__input" type="email" placeholder="Correo" required />
-                  <textarea rows="7" type="text" placeholder="Consulta" required></textarea>
+                  <input className="short__input" type="text" name="name" placeholder="Nombre" required />
+                  <input className="short__input" type="text" name="lastname" placeholder="Apellido" required />
+                  <input className="long__input" type="email" name="mail" placeholder="Correo" required />
+                  <textarea rows="7" type="text" placeholder="Consulta" name="inqury" required></textarea>
                   <button type="submit">Enviar</button>
                 </form>
               </div>

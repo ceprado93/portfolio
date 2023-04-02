@@ -45,7 +45,7 @@ const Modal = ({ showModal, project, closeMe }) => {
       <div className={"modal__container " + containerClass}>
         <div className="project__info">
           <h3 className="project__title">{project?.title}</h3>
-          <h5 className="project__subtitle">{project?.subtitle}</h5>
+          <h4 className="project__subtitle">{project?.subtitle}</h4>
           <p className="project__description">{project?.description}</p>
           <div className="project__tecnologies">
             {imageSources?.map((elm, idx) => (
